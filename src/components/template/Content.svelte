@@ -1,5 +1,5 @@
 <section class="content-container">
-  <div class="content-content">My first svelte App</div>
+  <div class="content-content"><slot /></div>
 </section>
 
 <style>
