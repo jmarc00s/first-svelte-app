@@ -26,31 +26,36 @@
 </script>
 
 <div class="container">
-  <label for="user">Nome</label>
-  <input
-    type="text"
-    name="user"
-    id="user"
-    bind:value={user.firstName}
-    placeholder="Nome"
-  />
-  <label for="lastName">Sobrenome</label>
-  <input
-    type="text"
-    name="lastName"
-    id="lastName"
-    bind:value={user.lastName}
-    placeholder="Sobrenome"
-  />
-  <label for="email">Email</label>
-  <input
-    type="email"
-    name="email"
-    id="email"
-    bind:value={user.email}
-    placeholder="Email"
-  />
-
+  <div class="input-container">
+    <label for="user">Nome</label>
+    <input
+      type="text"
+      name="user"
+      id="user"
+      bind:value={user.firstName}
+      placeholder="Nome"
+    />
+  </div>
+  <div class="input-container">
+    <label for="lastName">Sobrenome</label>
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      bind:value={user.lastName}
+      placeholder="Sobrenome"
+    />
+  </div>
+  <div class="input-container">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      bind:value={user.email}
+      placeholder="Email"
+    />
+  </div>
   <button disabled={!formIsValid} on:click={handleCreateUserClick}
     >Create user</button
   >
@@ -59,6 +64,10 @@
 <style>
   .container {
     @apply flex flex-col justify-center items-center w-1/3 mx-auto;
+  }
+
+  .input-container {
+    @apply w-full;
   }
 
   input {
