@@ -1,12 +1,14 @@
 <script>
   import Content from './components/template/Content.svelte';
   import Navbar from './components/template/Navbar.svelte';
-  import Home from './pages/Home.svelte';
+  import Home from './pages/Home/Home.svelte';
 </script>
 
 <main>
   <Navbar />
-  <Content><Home /></Content>
+  <Content>
+    <Home />
+  </Content>
 </main>
 
 <style>
