@@ -30,8 +30,14 @@
           <td>{user.lastName}</td>
           <td>{user.email || '-'}</td>
           <td class="actions-container">
-            <button class="edit-button">Editar</button>
-            <button class="remove-button">Remover</button>
+            <button
+              on:click={() => handleEditUserClick(user)}
+              class="edit-button">Editar</button
+            >
+            <button
+              on:click={() => handleRemoveUserClick(user)}
+              class="remove-button">Remover</button
+            >
           </td>
         </tr>
       {/each}

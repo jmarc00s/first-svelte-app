@@ -1,7 +1,14 @@
 <script>
   import { createEventDispatcher } from 'svelte';
 
+  export let editing;
+  export let userToEdit;
+
   const dispatch = createEventDispatcher();
+
+  $: if (editing) {
+    user = userToEdit;
+  }
 
   $: formIsValid = user.firstName && user.lastName;
 
@@ -12,7 +19,9 @@
   };
 
   const handleCreateUserClick = () => {
-    dispatch('userCreated', { ...user });
+    if (editing) dispatch('userEdited', user);
+    if (!editing) dispatch('userCreated', user);
+
     clearUserForm();
   };
 
