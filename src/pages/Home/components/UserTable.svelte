@@ -4,11 +4,11 @@
   const dispatch = createEventDispatcher();
   export let users;
 
-  const handleEditClick = (user) => {
+  const handleEditUserClick = (user) => {
     dispatch('editUser', user);
   };
 
-  const removeUser = (user) => {
+  const handleRemoveUserClick = (user) => {
     dispatch('removeUser', user);
   };
 </script>
