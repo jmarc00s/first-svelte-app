@@ -8,10 +8,18 @@
   const handleCreateUser = ({ detail: user }) => {
     users = [...users, user];
   };
+
+  const onRemoveUser = ({ detail: user }) => {
+    const userIndex = users.indexOf(user);
+
+    users = users.filter((_, i) => {
+      return i !== userIndex;
+    });
+  };
 </script>
 
 <section>
   <PageHeading title="Home page" />
   <UserForm on:userCreated={handleCreateUser} />
-  <UserTable {users} />
+  <UserTable on:removeUser={(user) => onRemoveUser(user)} {users} />
 </section>
